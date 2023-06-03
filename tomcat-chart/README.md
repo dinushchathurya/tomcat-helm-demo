@@ -7,7 +7,7 @@ helm create tomcat-chart
 ### Verify the conversion of the chart
 
 ```
-helm template tomcat-chart
+helm template tomcat-chart -f ./tomcat-chart/environments/dev/values.yaml
 ```
 
 ### Lint the chart
@@ -21,3 +21,4 @@ helm lint tomcat-chart
 ```
 helm install tomcat-chart tomcat-chart
 ```
+G:\Projects\Helm\tomcat-helm-demo\tomcat-chart\environments\dev\dev\values.yaml

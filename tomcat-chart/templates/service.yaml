@@ -4,8 +4,7 @@ metadata:
   name: tomcat-service
 spec:
   selector:
-    app: tomcat
-    env: dev
+    {{- include "tomcat-chart.labels" . | nindent 4 }}
   ports:
     - protocol: TCP
       port: 80

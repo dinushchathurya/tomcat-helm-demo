@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tomcat-deployment
-  label: 
-    app: tomcat
-    env: dev
+  labels: 
+    {{- include "tomcat-chart.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.spec.replicaCount }}
   selector:
@@ -13,8 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: tomcat
-        env: dev
+        {{- include "tomcat-chart.labels" . | nindent 8 }}
     spec:
       containers:
         - name: tomcat-container

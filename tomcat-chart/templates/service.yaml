@@ -5,8 +5,11 @@ metadata:
 spec:
   selector:
     app: tomcat
+    env: dev
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
+  selector:
+    app: tomcat
   type: ClusterIP

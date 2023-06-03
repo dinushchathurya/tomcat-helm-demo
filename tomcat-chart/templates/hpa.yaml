@@ -2,6 +2,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   annotations:
+    app: tomcat
     env: prod
 spec:
   maxReplicas: 10
@@ -9,5 +10,5 @@ spec:
   scaleTargetRef:
     apiVersion: extensions/v1
     kind: Deployment
-    name: tomcat-deployment
+    name: tomcat
   targetCPUUtilizationPercentage: 90
